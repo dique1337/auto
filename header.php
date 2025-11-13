@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -40,3 +41,30 @@ document.addEventListener('click', (e) => {
     }
 });
 </script>
+=======
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$username = htmlspecialchars($_SESSION['username']);
+?>
+<header>
+    <div class="logo">Автосервис</div>
+    <nav>
+        <a href="index.php">Главная</a>
+        <a href="services.php">Услуги</a>
+        <a href="contacts.php">Контакты</a>
+        <a href="about.php">О нас</a>
+                <a href="shop.php">Магазин</a>
+                <a href="cart.php">Корзина</a>
+                <a href="profile.php">Профиль</a>
+    </nav>
+    <div class="user">
+        <?= $username ?> |
+        <a href="logout.php"><button class="logout">Выйти</button></a>
+    </div>
+</header>
+>>>>>>> 1781d4e (Обновлено: Главная, услуги, контакты, о нас. Добавлено: футтер, магазин, корзина, профиль.)

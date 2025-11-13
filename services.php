@@ -6,11 +6,16 @@ if (!isset($_SESSION['username'])) {
 }
 $username = htmlspecialchars($_SESSION['username']);
 ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1781d4e (Обновлено: Главная, услуги, контакты, о нас. Добавлено: футтер, магазин, корзина, профиль.)
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 <title>Услуги | Автосервис</title>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -203,5 +208,46 @@ p.subtitle {
         </div>
     </div>
 </main>
+=======
+<title>Главная | Автосервис</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<?php include 'header.php'; ?>
+
+<main>
+    <h1>Добро пожаловать, <?= $username ?>!</h1>
+    <p>Мы рады видеть вас в нашем автосервисе. Выберите услугу или закажите прямо сейчас:</p>
+
+    <div class="two-columns">
+        <!-- Левая колонка: список услуг -->
+        <div class="services-list">
+            <h2>Наши услуги</h2>
+            <ul>
+                <li>Диагностика и ремонт двигателя</li>
+                <li>Замена масла и фильтров</li>
+                <li>Шиномонтаж и балансировка</li>
+                <li>Ремонт подвески</li>
+                <li>Компьютерная диагностика</li>
+                <li>Техническое обслуживание</li>
+            </ul>
+        </div>
+
+        <!-- Правая колонка: форма заказа -->
+        <div class="order-form">
+            <h2>Заказать услугу</h2>
+            <form action="order.php" method="post">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="email" name="email" placeholder="Ваш Email" required>
+                <textarea name="service" placeholder="Какая услуга вас интересует?" required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+</main>
+<?php include 'footer.php'; ?>
+
+>>>>>>> 1781d4e (Обновлено: Главная, услуги, контакты, о нас. Добавлено: футтер, магазин, корзина, профиль.)
 </body>
 </html>
